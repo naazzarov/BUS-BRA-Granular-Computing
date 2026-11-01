@@ -286,3 +286,6 @@ paper/build/
 !paper/figures/performance-reduction.png
 !paper/figures/paired-effects.png
 !paper/figures/label-noise.png
+
+# Reviewed public manuscript explicitly requested for publication.
+!paper/manuscript.pdf

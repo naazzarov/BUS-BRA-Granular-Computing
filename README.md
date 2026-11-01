@@ -150,11 +150,12 @@ numerical replication of the author program or its published benchmark tables.
 
 ## Paper and analysis
 
-The draft is **Patient-Grouped Evaluation of Fuzzy-Rough Feature Selection for Breast
+The unpublished manuscript is **Patient-Grouped Evaluation of Fuzzy-Rough Feature Selection for Breast
 Ultrasound Classification**, by Bahodir Nazarov, Zineb Gharib, Fatima Zazoul and Luo Chuan. Author details and research statements require author
 review before submission.
 
-- [Manuscript and build instructions](paper/README.md)
+- [Read the manuscript PDF](paper/manuscript.pdf) - unpublished manuscript, not an accepted journal article or arXiv preprint
+- [Manuscript source and build instructions](paper/README.md)
 - [Results and uncertainty](docs/RESULTS.md)
 - [Dataset provenance and restrictions](docs/DATASET.md)
 - [Exact private submission format](docs/SUBMISSION_FORMAT.md)

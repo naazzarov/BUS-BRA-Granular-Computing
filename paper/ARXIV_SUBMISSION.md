@@ -3,7 +3,7 @@
 The manuscript uses a compact venue-neutral title, one centered author line and
 standard LaTeX packages. No affiliations or email addresses are invented. The
 requester will enter confirmed affiliations/contact details during submission.
-The abstract is 1,395 ASCII characters, below arXiv's 1,920-character metadata limit.
+The abstract is 1,499 ASCII characters, below arXiv's 1,920-character metadata limit.
 
 Upload a source ZIP with exactly these files at its root/relative paths:
 

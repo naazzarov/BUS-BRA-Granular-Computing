@@ -2,6 +2,7 @@
 """Fail if tracked/staged content includes private data or generated artifacts."""
 from pathlib import Path
 import re
+import hashlib
 import subprocess
 import sys
 
@@ -12,17 +13,24 @@ ROW_IDENTIFIER = re.compile(rb"\b(?:bus_\d{4}-[lrs]|case_\d{4})\b")
 PUBLIC_FIGURES = {"paper/figures/performance-reduction.png", "paper/figures/paired-effects.png", "paper/figures/label-noise.png"}
 
 
+# Only this reviewed public paper may bypass the blanket PDF restriction.
+PUBLIC_DOCUMENT_SHA256 = {"paper/manuscript.pdf": "1828d3176f602b09d8b469638a30075c8c148bff0158022eb07312a42657d625"}
+
+
 def check():
     paths = subprocess.check_output(["git", "ls-files", "-z"]).decode().split("\0")
     failures = []
     for name in filter(None, paths):
         path = Path(name)
-        if (path.suffix.lower() in PRIVATE_SUFFIXES or (path.suffix.lower() == ".png" and name not in PUBLIC_FIGURES)
+        if ((path.suffix.lower() in PRIVATE_SUFFIXES and name not in PUBLIC_DOCUMENT_SHA256) or (path.suffix.lower() == ".png" and name not in PUBLIC_FIGURES)
                 or set(path.parts) & PRIVATE_PARTS or path.name in PRIVATE_NAMES | {"experiment.json", "completion_manifest.json"}):
             failures.append(name)
             continue
         # Inspect index contents: these are the exact bytes a commit will publish.
         raw = subprocess.check_output(["git", "show", f":{name}"])
+        if name in PUBLIC_DOCUMENT_SHA256 and hashlib.sha256(raw).hexdigest() != PUBLIC_DOCUMENT_SHA256[name]:
+            failures.append(name)
+            continue
         if ROW_IDENTIFIER.search(raw):
             failures.append(name)
     if failures:

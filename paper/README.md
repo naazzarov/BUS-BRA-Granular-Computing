@@ -1,11 +1,11 @@
-# Manuscript draft
+# Research manuscript
 
 **Patient-Grouped Evaluation of Fuzzy-Rough Feature Selection for Breast Ultrasound Classification**
 
-Authors (provided order): Bahodir Nazarov, Zineb Gharib, Fatima Zazoul.
-Acknowledgment: Luo Chuan.
+Authors (provided order): Bahodir Nazarov, Zineb Gharib, Fatima Zazoul and Luo Chuan.
 
-This is a research draft for author review, not an accepted or submitted paper.
+**Status: unpublished manuscript.** [Read the PDF](manuscript.pdf).
+It is not an accepted journal article or an arXiv preprint.
 The study compares three primary pipelines, adds three secondary baselines and a
 separate seven-pipeline cytology benchmark, with a
 qualified GBFRS reconstruction. It does not claim a new feature-selection
@@ -13,6 +13,7 @@ algorithm, clinical validation, equivalence or statistically established superio
 
 ## Files and provenance
 
+- `manuscript.pdf`: reviewed public copy of the current 16-page manuscript.
 - `main.tex`: complete manuscript; portable LaTeX with embedded bibliography.
 - `generated.tex`: primary numeric tables/macros generated from aggregate JSON.
 - `secondary_generated.tex`: tables from validated secondary aggregate JSON.
@@ -47,7 +48,7 @@ python tools/secondary_paper_assets.py
 
 ## Author review before submission
 
-The names/order and Luo Chuan acknowledgment came from the requester. Confirm name
+The four author names and their order were provided by the requester. Confirm name
 spellings, affiliations, contact details, research contributions, funding and
 competing-interest statements with all named authors. The authors must review the manuscript and accept responsibility for its contents. No institutional approval or funding has been invented.
 
@@ -82,5 +83,5 @@ inputs. Regenerate them with Matplotlib 3.10.8 using
 The title and author row now use a compact, venue-neutral layout. The source and
 PDF metadata use the same author order. The shortened abstract is also suitable
 for the arXiv metadata field. See [arXiv source instructions](ARXIV_SUBMISSION.md)
-for the exact seven-file bundle, compiler choice and current official guidance.
+for the exact four-file bundle, compiler choice and current official guidance.
 The upload package is a local deliverable; no submission or acceptance is claimed.
